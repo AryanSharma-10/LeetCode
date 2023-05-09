@@ -8,7 +8,7 @@ public:
         {
             sum=sum+nums[i];
             result.push_back(sum);
-            cout<<sum<<" ";
+            cout<<sum<<"  ";
         }
 
         return result;
