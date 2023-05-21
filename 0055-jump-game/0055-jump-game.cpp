@@ -12,7 +12,7 @@ public:
         if(index==nums.size()-1)
             return true;
         
-
+        
         for(int i=1;i<=nums[index];i++)
         {   
             if(index+i<nums.size() && dp[index+i]!=1)
