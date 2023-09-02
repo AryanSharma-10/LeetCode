@@ -30,7 +30,5 @@ class Solution {
         int num=head.val*2+carry;
         head.val=num%10;
         carry=num/10;
-
-        System.out.println("Returning from: "+num/2+" with carry: "+carry);
     }
 }
