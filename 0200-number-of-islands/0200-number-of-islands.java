@@ -24,21 +24,18 @@ class Solution {
 
     public static void findIslands(char[][] grid, int[][] visited, int i, int j, int m, int n)
     {
-        if(grid[i][j]!='1')
-            return;
-        
         visited[i][j]=1;
         
-        if(i>0 && visited[i-1][j]==0)
+        if(i>0 && grid[i][j]!='0' && visited[i-1][j]==0)
             findIslands(grid, visited, i-1, j, m, n);
         
-        if(j+1<n && visited[i][j+1]==0)
+        if(j+1<n && grid[i][j]!='0' && visited[i][j+1]==0)
             findIslands(grid, visited, i, j+1, m, n);
         
-        if(i+1<m && visited[i+1][j]==0)
+        if(i+1<m && grid[i][j]!='0' && visited[i+1][j]==0)
             findIslands(grid, visited, i+1, j, m, n);
         
-        if(j>0 && visited[i][j-1]==0)
+        if(j>0 && grid[i][j]!='0' && visited[i][j-1]==0)
             findIslands(grid, visited, i, j-1, m, n);
     }
 }
