@@ -9,14 +9,8 @@ class Solution {
         boolean[][] visited = new boolean[m][n];
         int oldColour = image[sr][sc];
 
-        for(int i = 0; i < m ; i++)
-        {
-            for(int j = 0; j < n ; j++)
-            {
-                if(!visited[i][j] && image[i][j]==oldColour)
-                    fill(image, result, visited, sr, sc, color, oldColour, m, n);
-            }
-        }
+        fill(image, result, visited, sr, sc, color, oldColour, m, n);
+          
         return image;
     }
 
