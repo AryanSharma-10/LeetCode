@@ -83,11 +83,13 @@ class Solution {
 
         for(i = 0 ; i < m ; i++)
         {   
+            if(i == 0 || i == m-1)
+                continue;
+                
             for(j = 0 ; j <n ; j++)
-            {
+            {   
                 if(visited[i][j] == 0 && board[i][j] == 1)
                     count++;
-                
             }
         }
 
