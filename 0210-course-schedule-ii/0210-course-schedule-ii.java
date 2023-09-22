@@ -15,14 +15,12 @@ class Solution {
             adj.get(arr[1]).add(arr[0]);
         }
 
-        for(ArrayList<Integer> arr : adj)
-            System.out.println(arr);
-
         for(int i = 0 ; i < V ; i++)
         {
             if(inDegree[i] == 0)
                 queue.add(i);
         }
+        
         int [] res = new int[V];
         int i = 0;
 
