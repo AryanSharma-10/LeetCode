@@ -1,7 +1,6 @@
 class Solution {
     public int countStudents(int[] students, int[] sandwiches) {
         Queue <Integer> q = new LinkedList<>();
-        HashMap <Integer, Integer> map = new HashMap<>();
 
         int len = students.length;
         int i = 0;
@@ -27,19 +26,9 @@ class Solution {
             }
         }
 
-        while(!q.isEmpty())
+        while(j < len)
         {
-            if(q.peek() == sandwiches[j])
-            {
-                if(q.peek() == 0)
-                    circle--;
-                else
-                    square--;
-
-                q.poll();
-                j++;
-            }
-            else if(sandwiches[j] == 0 && circle == 0)
+            if(sandwiches[j] == 0 && circle == 0)
             {
                 return square;
             }
@@ -49,8 +38,12 @@ class Solution {
             }
             else
             {
-                int temp = q.poll();
-                q.add(temp);
+                if(sandwiches[j] == 0)
+                    circle--;
+                else
+                    square--;
+                
+                j++;
             }
         }
 
